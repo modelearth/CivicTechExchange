@@ -31,7 +31,7 @@ See https://model.earth/localsite for param settings
 		
 		Notes from Loren:<br><br>
 
-		<h2>Notes on creating a static project list display:</h2>
+		<h2>Notes on creating a static project list display</h2>
 
 		Use the following API call:<br>
 		<a href="https://www.democracylab.org/api/projects?page=2&sortField=-project_date_modified">https://www.democracylab.org/api/projects?page=2&sortField=-project_date_modified</a><br><br>
@@ -40,15 +40,15 @@ See https://model.earth/localsite for param settings
 		<a href="common/components/common/projects/ProfileProjectSearch.jsx">common/components/common/projects/ProfileProjectSearch.jsx</a><br><br>
 
 
-		<h2>Install locally:</h2>
+		<h2>Install locally</h2>
 
-		We may not need to do the following for our static setup:<br><br>
+		We may NOT need to run the following to install locally for our static setup:<br><br>
 
 		python3 -m venv .env<br>
 		source .env/bin/activate<br>
 		pip install -r requirements.txt<br><br>
 		
-		If you are using Postgresql locally, you may need to remove these two lines in requirements.txt:<br><br>
+		If you are not running Postgresql locally, you may need to remove these two lines in requirements.txt:<br><br>
 
 		psycopg2==2.8.4<br>
 		psycopg2-binary==2.8.4<br><br>
