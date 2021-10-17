@@ -30,13 +30,18 @@ See https://model.earth/localsite for param settings
 	<div class="content contentpadding">
 		
 
-		<h2>Loren's attempt to install locally:</h2>
+		<h2>Install locally:</h2>
 
 		python3 -m venv .env<br>
 		source .env/bin/activate<br>
 		pip install -r requirements.txt<br><br>
 		
-		Resulted in:<br><br>
+		If you are using Postgresql locally, you may need to remove these two lines in requirements.txt:<br><br>
+
+		psycopg2==2.8.4<br>
+		psycopg2-binary==2.8.4<br><br>
+
+		Otherwise resulted in error:<br><br>
 
 		<code style="color:#333">
 		Running setup.py install for psycopg2 ... error<br>
