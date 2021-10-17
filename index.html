@@ -27,5 +27,24 @@ See https://model.earth/localsite for param settings
     loadMarkdown("README.md", "readmeDiv", "_parent");
 	</script>
 
+	<div class="content contentpadding">
+		
+
+		<h2>Loren's attempt to install locally:</h2>
+
+		python3 -m venv .env<br>
+		source .env/bin/activate<br>
+		pip install -r requirements.txt<br><br>
+		
+		Resulted in:<br><br>
+
+		<code style="color:#333">
+		Running setup.py install for psycopg2 ... error<br>
+	    ERROR: Command errored out with exit status 1:
+	     command: /Users/helix/Library/Data/CivicTechExchange/.env/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-install-albr4jgu/psycopg2/setup.py'"'"'; __file__='"'"'/private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-install-albr4jgu/psycopg2/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-record-zwe6rkbk/install-record.txt --single-version-externally-managed --compile --install-headers /Users/helix/Library/Data/CivicTechExchange/.env/include/site/python3.8/psycopg2
+	         cwd: /private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-install-albr4jgu/psycopg2/
+	    </code>
+	</div>
+
 </body>
 </html>
