@@ -29,8 +29,20 @@ See https://model.earth/localsite for param settings
 
 	<div class="content contentpadding">
 		
+		Notes from Loren:<br><br>
+
+		<h2>Notes on creating a static project list display:</h2>
+
+		Use the following API call:<br>
+		<a href="https://www.democracylab.org/api/projects?page=2&sortField=-project_date_modified">https://www.democracylab.org/api/projects?page=2&sortField=-project_date_modified</a><br><br>
+
+		Optionally use the following HTML template:<br>
+		<a href="common/components/common/projects/ProfileProjectSearch.jsx">common/components/common/projects/ProfileProjectSearch.jsx</a><br><br>
+
 
 		<h2>Install locally:</h2>
+
+		We may not need to do the following for our static setup:<br><br>
 
 		python3 -m venv .env<br>
 		source .env/bin/activate<br>
