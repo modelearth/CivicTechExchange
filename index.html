@@ -5,67 +5,37 @@
 <title>Civic Tech Exchange</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="shortcut icon" href="data:image/x-icon;," type="image/x-icon">
-<script type="text/javascript" src="https://neighborhood.org/localsite/js/d3.v5.min.js"></script>
-<script type="text/javascript" src="https://neighborhood.org/localsite/js/showdown.min.js"></script>
-<script type="text/javascript" src="https://model.earth/localsite/js/localsite.js?showheader=true"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/d3.v5.min.js" id="/localsite/js/d3.v5.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/jquery.min.js" id="/localsite/js/jquery.min.js"></script>
+<script type="text/javascript" src="https://neighborhood.org/localsite/js/showdown.min.js" id="/localsite/js/showdown.min.js"></script>
+<script type="text/javascript" src="/localsite/js/localsite.js?showheader=true"></script>
 
 <!--
 DemocracyLab.org
 See https://model.earth/localsite for param settings
 -->
+<script>
+    if(typeof param=='undefined'){ var param={}; }
+    param.display = "locfilters"
+    param.headerLogo = "<img src='https://model.earth/localsite/img/logo/partners/democracy-lab.png' style='width:190px;margin-top:15px'>";
+    param.titleArray = ["Democracy","Lab"]
+    param.startTitle = "DemocracyLab"
+
+    $(document).ready(function () {
+    	loadMarkdown("README.md", "readmeDiv", "_parent");
+    	loadMarkdown("restful/README.md", "restfulDiv", "_parent");
+    });
+</script>
 
 </head>
 
 <body>
 	
+	<div class="content contentpadding displayOnload" style="display:none">
+		A RESTful entry point to DemocracyLab
 
-	<div class="content contentpadding">
 		<div id="readmeDiv"></div>
-	</div>
-
-	<script>
-    loadMarkdown("README.md", "readmeDiv", "_parent");
-	</script>
-
-	<div class="content contentpadding">
-		
-		Notes from Loren:<br><br>
-
-		<h2>Notes on pulling the project list display into static HTML page</h2>
-
-		Use the following API call:<br>
-		<a href="https://www.democracylab.org/api/projects?page=2&sortField=-project_date_modified">https://www.democracylab.org/api/projects?page=2&sortField=-project_date_modified</a><br><br>
-
-		Current API test page:<br>
-		<a href="https://model.earth/io/template/feed/demolab.html">Loren has requested header authentication key from Marlon</a><br><br>
-
-		Optionally use the following HTML template:<br>
-		<a href="common/components/common/projects/ProfileProjectSearch.jsx">common/components/common/projects/ProfileProjectSearch.jsx</a><br><br>
-
-
-		<h2>Install locally</h2>
-
-		We may NOT need to run the following to install locally for REST page setup:<br><br>
-
-		python3 -m venv .env<br>
-		source .env/bin/activate<br>
-		pip install -r requirements.txt<br><br>
-		
-		If you are not running Postgresql locally, you may need to remove these two lines in requirements.txt:<br><br>
-
-		psycopg2==2.8.4<br>
-		psycopg2-binary==2.8.4<br><br>
-
-		<!--
-		Otherwise resulted in error:<br><br>
-
-		<code style="color:#333">
-		Running setup.py install for psycopg2 ... error<br>
-	    ERROR: Command errored out with exit status 1:
-	     command: /Users/helix/Library/Data/CivicTechExchange/.env/bin/python3 -u -c 'import sys, setuptools, tokenize; sys.argv[0] = '"'"'/private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-install-albr4jgu/psycopg2/setup.py'"'"'; __file__='"'"'/private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-install-albr4jgu/psycopg2/setup.py'"'"';f=getattr(tokenize, '"'"'open'"'"', open)(__file__);code=f.read().replace('"'"'\r\n'"'"', '"'"'\n'"'"');f.close();exec(compile(code, __file__, '"'"'exec'"'"'))' install --record /private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-record-zwe6rkbk/install-record.txt --single-version-externally-managed --compile --install-headers /Users/helix/Library/Data/CivicTechExchange/.env/include/site/python3.8/psycopg2
-	         cwd: /private/var/folders/3m/rk27x_md7r14rv8rp44gm0900000gn/T/pip-install-albr4jgu/psycopg2/
-	    </code>
-		-->
+		<div id="restfulDiv"></div>
 
 	</div>
 
